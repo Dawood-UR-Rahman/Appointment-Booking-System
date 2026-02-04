@@ -3,7 +3,7 @@ const generatePassword = require("../utils/Password");
 const bcrypt = require("bcrypt");
 
 const UserService = async (data={})=>{
-          const{email, firstName, lastName, phone} = data;
+    const{email, firstName, lastName, phone} = data;
     let existingUser = await User.findOne({email});
     if(existingUser){
         return {
