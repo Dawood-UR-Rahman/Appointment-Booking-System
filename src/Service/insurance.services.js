@@ -1,14 +1,9 @@
 const InsuranceInfo= require('../models/insuranceInfo');
 const User = require('../models/User');
 
-exports.createInsuranceInfo = async (data) => {
- const user = await User.findOne({email:data.email});
- console.log(user);
- if(!user){
-    throw new Error("User not found");
- } 
+exports.createInsuranceInfo = async (data, userId, session) => {
  const insuranceInfo = await InsuranceInfo.create({
-    user: user._id,
+    user:userId,
     memberFirstName: data.memberFirstName,
     memberLastName: data.memberLastName,
     memberDOB: data.memberDOB,
