@@ -26,7 +26,9 @@ const UserService = async (data={})=>{
         email: newUser.email,
         password: password
     }
-    return userData;
+    return {
+        success:true,
+    };
 }
  
 module.exports = UserService;

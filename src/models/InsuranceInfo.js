@@ -16,3 +16,5 @@ const insuracnceInfoSchema = new mongoose.Schema({
     ssnBackFileUrl: { type: String, default: "" },
     
 },{ timestamps: true })
+
+module.exports = mongoose.model("InsuranceInfo", insuracnceInfoSchema)
